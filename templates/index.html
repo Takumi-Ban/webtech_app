@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>オリジナル機械学習モデルでたたかうやつ</h2>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action"><a href="{{url_for('register')}}" class="text-dark">あたらしく登録する</a></li>
+            <li class="list-group-item list-group-item-action"><a href="{{url_for('login')}}" class="text-dark">ログインする</a></li>
+            <li class="list-group-item list-group-item-action"><a href="{{url_for('logout')}}" class="text-dark">ログアウトする</a></li>
+            <li class="list-group-item list-group-item-action"><a href="{{url_for('history')}}" class="text-dark">りれきを見る</a></li>
+            <li class="list-group-item list-group-item-action"><a href="{{url_for('play')}}" class="text-dark">あそぶ</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

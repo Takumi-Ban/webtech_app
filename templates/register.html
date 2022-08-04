@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>登録する</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label for="id" class="form-label">ユーザID</label>
+                <input type="text" name="username" id="id" class="form-control" maxlength="15">
+                <div id="idhelp" class="form-text">英数字のみでたのむよ！最大15文字</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">パスワード</label>
+                <input type="password" name="password" id="password" name="password" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">パスワード(確認)</label>
+                <input type="password" id="passconf" name="passconf" class="form-control" oninput="PassCheck(this)">
+            </div>
+            <button type="submit" class="btn btn-primary">登録する</button>
+        </form>
+    </div>
+</div>
+<script>
+    function PassCheck(passconf) {
+        var in1 = password.value;
+        var in2 = passconf.value;
+        if (in1 != in2) {
+            passconf.setCustomValidity("パスワードが一致しません");
+        } else {
+            passconf.setCustomValidity("");
+        }
+    } 
+</script>
+{% endblock %}

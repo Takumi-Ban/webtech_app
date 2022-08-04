@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>たたかう</h2>
+        {% if results %}
+        <h3>認識結果</h3>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>id</th>
+                    <th>ユーザ名</th>
+                    <th>正解ラベル</th>
+                    <th>認識ラベル</th>
+                </tr>
+                {% for cont in results %}
+                <tr>
+                    {% for c in cont %}
+                    <td>{{ c }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

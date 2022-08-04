@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>ログインする</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label for="id" class="form-label">ユーザID</label>
+                <input type="text" name="username" id="id" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">パスワード</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">ログインする</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

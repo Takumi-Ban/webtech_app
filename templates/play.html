@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>たたかう</h2>
+        <p>機械学習モデルのアップロードは<a href="{{ url_for('upload') }}">ここ</a></p>
+        <div class="mb-3">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="image" class="form-label">おためし画像をアップロード</label>
+                    <input type="file" name="image" id="image" class="form-control">
+                    
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">正解の手の形を選択</label>
+                    <select name="hand" id="hand" class="form-select">
+                        <option value="0">グー</option>
+                        <option value="1">チョキ</option>
+                        <option value="2">パー</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">実行</button>
+            </form>
+        </div>
+        {% if msg %}
+        <div class="mb-3">
+            <h2>検出結果〜〜〜！</h2>
+            <p>{{ msg }}</p>
+            <p>正解ラベル: {{ label }}</p>
+            <p>検出ラベル: {{ dlabel }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
